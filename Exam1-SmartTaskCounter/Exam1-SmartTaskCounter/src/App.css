@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f4f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(85, 130, 255, 0.10), transparent 32rem),
+    radial-gradient(circle at 90% 90%, rgba(38, 190, 153, 0.09), transparent 28rem),
+    #f4f7fb;
+}
+
+button, input { font: inherit; }
+
+.page-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 18px 22px;
+}
+
+.counter-card {
+  width: min(100%, 560px);
+  padding: clamp(24px, 5vw, 42px);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e4eaf3;
+  border-radius: 24px;
+  box-shadow: 0 24px 70px rgba(32, 49, 83, 0.10);
+}
+
+.eyebrow {
+  color: #536ee8;
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 10px 0 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.35rem);
+  letter-spacing: -0.055em;
+  line-height: 1.15;
+}
+
+.intro {
+  margin: 0;
+  color: #69758a;
+  line-height: 1.65;
+}
+
+.target-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 28px;
+  padding: 14px 16px;
+  background: #f7f9fd;
+  border: 1px solid #e8edf5;
+  border-radius: 14px;
+  color: #39465d;
+  font-weight: 600;
+}
+
+.target-row input {
+  width: 88px;
+  padding: 8px 10px;
+  color: #172033;
+  background: white;
+  border: 1px solid #d8e0ed;
+  border-radius: 9px;
+  outline: none;
+}
+
+.target-row input:focus-visible {
+  border-color: #536ee8;
+  box-shadow: 0 0 0 3px rgba(83, 110, 232, 0.14);
+}
+
+.progress-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0 24px;
+}
+
+.count {
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(5rem, 18vw, 7rem);
+  line-height: 1;
+  letter-spacing: -0.08em;
+  font-weight: 800;
+  color: #1c2a46;
+  font-variant-numeric: tabular-nums;
+}
+
+.count-caption {
+  margin-top: 8px;
+  color: #78849a;
+  font-size: 0.95rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  margin-top: 24px;
+  overflow: hidden;
+  background: #e9edf6;
+  border-radius: 999px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #526de8, #6e8cff);
+  border-radius: inherit;
+  transition: width 180ms ease;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 8px 12px;
+  color: #59667c;
+  background: #f1f4fa;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background: #8793a8;
+  border-radius: 50%;
+}
+
+.status-done {
+  color: #11795e;
+  background: #e7f8f1;
+}
+
+.status-done .status-dot { background: #16a779; }
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.button {
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+
+.button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(35, 53, 90, 0.10);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(83, 110, 232, 0.35);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.button-primary {
+  color: white;
+  background: #526de8;
+}
+
+.button-secondary {
+  color: #3449aa;
+  background: #edf0ff;
+  border-color: #e1e6ff;
+}
+
+.button-quiet {
+  color: #39465d;
+  background: white;
+  border-color: #dfe5ef;
+}
+
+.button-reset {
+  color: #9b4050;
+  background: #fff2f3;
+  border-color: #ffe2e5;
+}
+
+.completion-message {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  color: #11795e;
+  background: #e7f8f1;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.hint {
+  margin: 22px 0 0;
+  color: #8791a4;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+footer {
+  margin-top: 22px;
+  color: #8a95a8;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 420px) {
+  .counter-card { padding: 23px 18px; }
+  .controls { grid-template-columns: 1fr; }
+}
